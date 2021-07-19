@@ -1,0 +1,17 @@
+## olhar containers ##
+docker ps
+docker ps -a
+
+## Listar Imagens ##
+docker images
+
+## removendo image docker ##
+docker rmi hello-world
+
+## removendo container ##
+docker rm id_do_container
+
+#
+
+## criar pasta dentro de um container ##
+docker run -dti --name Ubuntu-A ubuntu
