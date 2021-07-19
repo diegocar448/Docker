@@ -20,17 +20,29 @@ docker stop 922
 ## dando apelido a imagem ##
 docker run -dti --name Ubuntu-A ubuntu
 
-## copiando arquivos no docker ##
+## copiando arquivos no docker (da  maquina fisica para o container)##
 docker cp MeuArquivo.txt Ubuntu-A:/destino
+
+## copiando arquivos no docker (do container para a maquina fisica)##
+docker cp Ubuntu-A:/destino/Meuzip.zip Zipcopia.zip
 
 ## executar listagem dentro do images/Ubuntu-A ##
 docker exec Ubuntu-A ls /destino -l
+
+## entrando no container ##
+docker exec -ti Ubuntu-A /bin/bash
 
 ## install zip ##
 apt -y install zip
 
 ## zip ##
 zip Meuzip.zip *.txt
+
+## unzip ##
+unzip Meuzip.zip
+
+
+
 
 
 
