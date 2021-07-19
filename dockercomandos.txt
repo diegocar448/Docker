@@ -41,6 +41,9 @@ zip Meuzip.zip *.txt
 ## unzip ##
 unzip Meuzip.zip
 
+## aqui vamos baixar uma image pegando uma versão especificar ##
+docker pull debian:9
+
 
 
 
