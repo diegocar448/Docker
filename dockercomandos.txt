@@ -44,6 +44,38 @@ unzip Meuzip.zip
 ## aqui vamos baixar uma image pegando uma versão especificar ##
 docker pull debian:9
 
+## criando container mysql ##
+docker pull mysql
+
+## rodamos o container mysql ##
+## especificando a variavel de ambiente flag -e MYSQL_ROOT_PASSWORD=senha ##
+## especificando o nome do container --name mysql-A ##
+## -d flag para deixar rodando em background ##
+## -p flag para liberar porta 3306:3306 ##
+docker run -e MYSQL_ROOT_PASSWORD=senha --name mysql-A -d -p 3306:3306 mysql
+
+## rodar um bash no container mysql ## 
+docker exec -it mysql-A bash
+
+## chamar o comando mysql passando o protocolo ##
+mysql -u root -p --protocol=tcp
+
+## listar as informações mysql ##
+docker inspect mysql-A
+
+## instalar mysql-client ##
+apt -y install mysql-client
+
+## podendo acessa-lo da maquina fisica ##
+mysql -u root -p --protocol=tcp
+
+
+
+
+
+
+
+
 
 
 
