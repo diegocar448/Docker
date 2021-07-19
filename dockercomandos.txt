@@ -11,7 +11,15 @@ docker rmi hello-world
 ## removendo container ##
 docker rm id_do_container
 
-#
+## buscar, baixar e instalar imagem ##
+docker run -dti centos
 
-## criar pasta dentro de um container ##
+## parando container ##
+docker stop 922
+
+## dando apelido a imagem ##
 docker run -dti --name Ubuntu-A ubuntu
+
+
+
+
