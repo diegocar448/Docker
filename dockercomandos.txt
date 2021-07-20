@@ -69,6 +69,24 @@ apt -y install mysql-client
 ## podendo acessa-lo da maquina fisica ##
 mysql -u root -p --protocol=tcp
 
+## listar informações network ##
+ip a
+
+
+## configuração ##
+
+Docker executando mysql 8.X. Eu loguei no container
+
+docker exec -it CONTAINER_ID bash
+em seguida, faça login no mysql como root
+
+mysql --user=root --password
+Digite a senha do root (o padrão é 'root'). Finalmente execute:
+
+ALTER USER 'username' IDENTIFIED WITH mysql_native_password BY 'password';
+
+
+
 
 
 
