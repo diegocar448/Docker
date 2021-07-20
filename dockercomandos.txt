@@ -99,6 +99,16 @@ docker ps -a
 docker rename nameold namenew
 
 
+####################################################################################
+## mount especificando local onde será salvo --volume ##
+## caso o usuario crie outro container mysql passando o caminho 
+	--volume ele terá as informações criadas anteriormente por outro container 
+####################################################################################
+docker run -e MYSQL_ROOT_PASSWORD=32658515 --name mysql-A -d -p 3306:3306 --volume=/data/mysql-A:/var/lib/mysql mysql
+
+## login flag protocol ##
+mysql -u root -p --protocol=tcp --port=3306
+
 
 
 
