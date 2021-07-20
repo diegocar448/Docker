@@ -86,6 +86,18 @@ Digite a senha do root (o padrão é 'root'). Finalmente execute:
 ALTER USER 'username' IDENTIFIED WITH mysql_native_password BY 'password';
 
 
+## parando container ##
+docker stop mysql-A
+
+## starting container ##
+docker start mysql-A
+
+## Listando container mesmo parados ##
+docker ps -a
+
+## renomeando container ##
+docker rename nameold namenew
+
 
 
 
