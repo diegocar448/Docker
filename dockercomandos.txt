@@ -137,6 +137,14 @@ docker container prune
 ## rodando container apache ##
 docker run --name apache-A -d -p 80:80 --volume=/data/apache-A:/usr/local/apache2/htdocs httpd
 
+## agora vamos baixar o php com um apache para roda-lo ##
+docker pull php:7.4-apache
+
+## rodando container php-A para as flags -d running background -p 8080 passando a porta que irá roda-lo ##
+##8080:80 pegando host na porta 80 e rodar em 8080
+docker run --name php-A -d -p 8080:80 --volume=/data/php-A:/var/www/html php:7.4-apache
+
+
 
 
 
