@@ -134,6 +134,10 @@ docker volume prune
 ## remover todos os contaners que não estão em uso ##
 docker container prune
 
+## rodando container apache ##
+docker run --name apache-A -d -p 80:80 --volume=/data/apache-A:/usr/local/apache2/htdocs httpd
+
+
 
 
 
