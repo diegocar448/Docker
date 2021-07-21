@@ -109,6 +109,22 @@ docker run -e MYSQL_ROOT_PASSWORD=32658515 --name mysql-A -d -p 3306:3306 --volu
 ## login flag protocol ##
 mysql -u root -p --protocol=tcp --port=3306
 
+## criando container com type + o path antes de baixar container ##
+docker run -dti --mount type=bind,src=/data/debian-A,dst=/data debian
+
+## criando um volume para somente leitura no container ##
+docker run -dti --mount type=bind,src=/data/debian-A,dst=/data,ro debian
+
+## comando para listar todos os volumes ##
+docker volume ls
+
+## criando volume ##
+docker volume create nome_do_volume
+
+## montando o volume dentro do container ##
+docker run -dti --name debian0A --mount type=volume,src=data-debian,dst=/data debian
+docker run -dti --mount type=volume,src=data-debian,dst=/data --name debian-B debian
+
 
 
 
