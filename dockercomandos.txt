@@ -125,6 +125,16 @@ docker volume create nome_do_volume
 docker run -dti --name debian0A --mount type=volume,src=data-debian,dst=/data debian
 docker run -dti --mount type=volume,src=data-debian,dst=/data --name debian-B debian
 
+## parar e excluir container com um unico comando passando a flag -f ##
+docker rm -f centos-A
+
+## remover todos os volume do host ##
+docker volume prune
+
+## remover todos os contaners que não estão em uso ##
+docker container prune
+
+
 
 
 
