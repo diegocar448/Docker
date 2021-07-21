@@ -144,6 +144,11 @@ docker pull php:7.4-apache
 ##8080:80 pegando host na porta 80 e rodar em 8080
 docker run --name php-A -d -p 8080:80 --volume=/data/php-A:/var/www/html php:7.4-apache
 
+## docker stats container para saber o quanto de cpu, memória... esta sendo consumido ##
+docker stats php-A
+
+## setar parâmetros de consumo do container (Necessário Swap) ##
+docker update php-A -m 128M --cpus 0.2
 
 
 
