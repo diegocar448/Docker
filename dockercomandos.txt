@@ -160,6 +160,31 @@ docker info
 ## acesso logs ##
 docker container logs mysql-A
 
+## listar as redes disponiveis ##
+docker network ls
+
+## verificar quais containers estão vinculados a essa rede ##
+docker network inspect bridge
+
+## entrando no bash do container ##
+docker exec -ti Ubuntu-A bash
+
+## install package ping ##
+apt-get install -y iputils-ping
+
+## criando uma rede para isolar os containers ##
+docker network create minha-rede
+
+
+## criando container e especificando em qual rede ele irá rodar ##
+docker run -dti --name Ubuntu-A --network minha-rede ubuntu
+
+## Verificando qual faixa de ip a rede "minha-rede" pegou ##
+docker network inspect minha-rede
+
+172.18.0.2 A
+172.18.0.2 B
+
 
 
 
