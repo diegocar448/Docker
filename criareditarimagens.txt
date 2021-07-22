@@ -1,0 +1,59 @@
+## criando imagem ##
+docker run -dti --name ubuntu-python ubuntu
+
+## executando bash ##
+docker exec -ti ubuntu-python bash
+
+## dentro do bash baixamos o python e o nano##
+apt update
+apt install -y python3 nano
+apt clean
+
+
+## nano salvar e sair ##
+Ctrl+O  depois Ctrl+X para sair
+
+## vamos executar dentro do ubuntu-python ##
+docker exec -ti ubuntu-python python3 /opt/app.py
+
+## Criar imagem a partir do docker-file ##
+## parando o ubuntu-python ##
+## sequencia de comandos ##
+docker stop ubuntu-python
+docker rm ubuntu-python
+
+mkdir /images
+cd /images/
+mkdir ubuntu-python
+cd ubuntu-python
+nano app.py
+nano dockerfile
+
+-> conteúdo dockerfile
+
+FROM ubuntu
+
+RUN apt update && apt install -y python3 && apt clean
+
+COPY app.py /opt/app.py
+
+CMD python3 /opt/app.py
+
+
+<-
+
+
+
+
+## agora fará o builder setando o com o nome ubuntu-python ##
+docker build . -t ubuntu-python
+
+## agora listamos nossas images ##
+docker images
+
+## agora executamos o container setando o name ##
+docker run -ti --name meu-app ubuntu-python
+
+
+
+
