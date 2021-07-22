@@ -140,6 +140,52 @@ Ctrl+o && Ctrl+x
 docker image build -t debian-apache:1.0 .
 docker images
 
+## rodamos após build ##
+docker run -dti -p 80:80 --name meu-apache debian-apache:1.0
 
 
 
+############################################################################
+############################################################################
+	
+	Utilizando uma imagem do...
+
+############################################################################
+############################################################################
+
+
+
+## baixando python ##
+docker pull python
+
+## Listamos as images ##
+docker images
+
+## pasta para python ##
+mkdir python
+cd python
+nano app.py
+Ctrl+o Ctrl+x
+
+## criamos o Dockerfile ##
+nano Dockerfile
+
+
+
+## conteúdo do Dockerfile ##
+
+->
+
+FROM python
+
+WORKDIR /usr/src/app
+
+COPY app.py /usr/src/app
+
+CMD ["python", "./app.py"]
+
+<-
+
+
+## agora vamos gerar/builder a imagem ##
+docker image build -t app-python:1.0 .
