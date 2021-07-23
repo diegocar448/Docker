@@ -272,10 +272,12 @@ docker image build -t app-go:1.0 .
 ## caso ocorra falha service inactive leftspace ##
 service docker start
 start docker.service
+reboot
 ##################################################
 
 
-
+## Rodando app.go ##
+docker run -ti --name meuappOK app-go:1.0
 
 
 
