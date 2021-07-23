@@ -206,7 +206,7 @@ docker run -ti --name runapp1 app-python:1.0
 
 ## adicionar pasta para golang ##
 mkdir go && cd go
-docker pull alpine
+docker pull alpine &&
 docker pull golang
 
 
@@ -266,6 +266,17 @@ ENTRYPOINT ./app.go
 
 ## agora fazemos o build ##
 docker image build -t app-go:1.0 .
+
+
+
+## caso ocorra falha service inactive leftspace ##
+service docker start
+start docker.service
+##################################################
+
+
+
+
 
 
 
