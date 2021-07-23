@@ -189,3 +189,90 @@ CMD ["python", "./app.py"]
 
 ## agora vamos gerar/builder a imagem ##
 docker image build -t app-python:1.0 .
+
+## rodando docker ##
+docker run -ti --name runapp1 app-python:1.0
+
+
+
+############################################################################
+############################################################################
+	
+	Criando uma imagem Multistage
+
+############################################################################
+############################################################################
+
+
+## adicionar pasta para golang ##
+mkdir go && cd go
+docker pull alpine
+docker pull golang
+
+
+
+## adicionando o golang no alpine reduzimos o tamanho ##
+## criando app em golang ##
+nano app.go
+
+
+->
+package main
+import(
+"fmt"
+)
+
+func main(){
+fmt.PrintLn("Qual seu nome:?")
+var name string
+fmt.ScanLn(&name)
+fmt.PrinLn("Oi, %s! Eu sou a linguagem Go!", name)
+}
+
+<-
+
+## Agora vamos criar o Dockerfile ##
+nano Dockerfile
+
+## primeira parte é para gerar o binário golang ##
+## Usamos o RUN porque vamos transformar o script em um arquivo binário ##
+
+
+
+## na segunda parte ele criará o alpine ##
+
+
+->
+FROM golang as exec
+
+COPY app.go /go/src/app/
+
+#ENV GO111MODULE=auto
+
+WORKDIR	 /go/src/app/
+
+RUN go build -o app.go .
+
+FROM alpine
+
+WORKDIR /appexec
+
+COPY --from=exec /go/src/app /appexec
+RUN chmod -R 755 /appexec
+ENTRYPOINT ./app.go
+
+<-
+
+
+## agora fazemos o build ##
+docker image build -t app-go:1.0 .
+
+
+
+
+
+
+
+
+
+
