@@ -280,7 +280,20 @@ reboot
 docker run -ti --name meuappOK app-go:1.0
 
 
+## Removendo imagem app-go ##
+docker rmi -f d4f499f5e684
 
+## logando conta docker hub ##
+docker login
+
+## aqui vamos build a image para o nosso docker hub remoto ##
+docker build . -t diegocar448/my-go-app:1.0
+
+## Aqui enviamos para o docker hub ##
+docker push diegocar448/my-go-app:1.0
+
+## baixar do remoto para o local passando a versão ##
+docker pull diegocar448/my-go-app:1.0
 
 
 
