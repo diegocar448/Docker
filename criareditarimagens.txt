@@ -296,7 +296,20 @@ docker push diegocar448/my-go-app:1.0
 docker pull diegocar448/my-go-app:1.0
 
 
+############################################################################
+############################################################################
+	
+	Realizando o upload de imagens para o Docker Hub
 
+############################################################################
+############################################################################
+
+
+## instalar docker na outra VM
+snap install docker 
+
+##instalar registry
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
 
 
