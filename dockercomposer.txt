@@ -1,0 +1,19 @@
+############################################################################
+############################################################################
+	
+	Docker composer
+
+############################################################################
+############################################################################
+
+
+Definição 
+
+Docker Compose é uma ferramenta desenvolvida para ajudar a definir e compartilhar 
+aplicativos com vários contêineres. Com o Compose, você pode criar um arquivo YAML para definir os serviços
+e com um único comando, pode rodar todos os contêineres ou para-los.
+
+https://hub.docker.com/_/adminer
+
+## instalar docker-compose
+apt-get install -y docker-compose
