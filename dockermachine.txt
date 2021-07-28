@@ -28,3 +28,14 @@ base=https://github.com/docker/machine/releases/download/v0.16.0 \
 ## depois verifique a versão instalada
 docker-machine --version
 
+
+############################################################################
+############################################################################
+	
+	Instalação do Docker Machine no Windows
+
+############################################################################
+############################################################################
+
+https://docs.docker.com/machine/install-machine/
+https://gitforwindows.org/
