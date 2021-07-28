@@ -341,7 +341,7 @@ services:
       - 6379
   db:
     image: mariadb
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --skip-innodb-read-only-compressed
     restart: always
     volumes:
       - db_data:/var/lib/mysql
@@ -366,3 +366,10 @@ networks:
 
 ## rodando docker-compose.yml
 docker-compose up -d
+
+
+## endereço onde fica o cloud pessoal
+/var/lib/docker/volumes/cloud_db_data/_data/
+
+## para dar um down nos containers precisamos executar na pasta de seu docker-compose.yml /compose/cloud/
+docker-compose down
