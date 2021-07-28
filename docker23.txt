@@ -76,8 +76,8 @@ header('Content-Type: text/html; charset=iso-8859-1');
 echo 'Versao Atual do PHP: ' . phpversion() . '<br>';
 
 $servername = "db";
-$username = "root";
-$password = "Senha123";
+$username = "diego";
+$password = "senha";
 $database = "testedb";
 
 // Criar conexão
