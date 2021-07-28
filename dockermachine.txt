@@ -1,0 +1,30 @@
+############################################################################
+############################################################################
+	
+	Docker Machine
+
+############################################################################
+############################################################################
+
+
+
+############################################################################
+############################################################################
+	
+	Definição e instalação do Docker Machine
+
+############################################################################
+############################################################################
+
+
+##roda o seguinte comando para instalar o docker machine na maquina (Linux)
+
+base=https://github.com/docker/machine/releases/download/v0.16.0 \
+  && curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine \
+  && sudo mv /tmp/docker-machine /usr/local/bin/docker-machine \
+  && chmod +x /usr/local/bin/docker-machine
+
+
+## depois verifique a versão instalada
+docker-machine --version
+
