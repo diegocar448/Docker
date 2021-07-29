@@ -37,5 +37,15 @@ docker-machine --version
 ############################################################################
 ############################################################################
 
+sudo apt install virtualbox
+
 https://docs.docker.com/machine/install-machine/
 https://gitforwindows.org/
+
+## lista docker-machine
+docker-machine ls
+
+## criar docker-machine
+docker-machine create --help
+docker-machine create --driver virtualbox --virtualbox-disk-size="50000" --virtualbox-memory "2048" my-docker-vm
+
