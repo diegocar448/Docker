@@ -48,4 +48,5 @@ docker-machine ls
 ## criar docker-machine
 docker-machine create --help
 docker-machine create --driver virtualbox --virtualbox-disk-size="50000" --virtualbox-memory "2048" my-docker-vm
-
+docker-machine create -d virtualbox vm1
+docker-machine create default --virtualbox-no-vtx-check
