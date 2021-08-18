@@ -53,6 +53,7 @@ docker pull mysql
 ## -d flag para deixar rodando em background ##
 ## -p flag para liberar porta 3306:3306 ##
 docker run -e MYSQL_ROOT_PASSWORD=senha --name mysql-A -d -p 3306:3306 mysql
+(docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql/mysql-server:latest)
 
 ## rodar um bash no container mysql ## 
 docker exec -it mysql-A bash
